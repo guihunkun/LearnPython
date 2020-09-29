@@ -9,7 +9,8 @@ def read_file(file_name):
 	i = 0
 	for line in lines:
 		line = line.strip().split('\t')
-		K[i, :] = np.array(list(map(int, line)))
+		#K[i, :] = np.array(list(map(int, line)))
+                K[i] = list(map(int, line))
 		i+=1
 	return K
 
