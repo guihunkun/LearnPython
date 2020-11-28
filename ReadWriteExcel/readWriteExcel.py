@@ -84,6 +84,14 @@ def write_excel(file_name, data):
          }
     )
     worksheet.insert_chart("A11", chart)
+    
+    # 6) 插入本地图片(例如用matplotlib画的图)
+    x = np.linspace(0, np.pi)
+    y = np.sin(x)
+    plt.plot(x, y, color='red', marker='+')
+    plt.savefig('sin.png')  # 保存图片
+    plt.show()
+    worksheet.insert_image('D18', 'sin.png')
     workbook.close()
 
 
