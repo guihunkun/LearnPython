@@ -59,16 +59,15 @@ def find_address_from_GPS(GPS):
     return formatted_address, province, city, district
 
 
-GPS_info = find_GPS_image(pic_path='003.jpg')
-address = find_address_from_GPS(GPS=GPS_info)
+if __name__ == '__main__':
+    GPS_info = find_GPS_image(pic_path='003.jpg')
+    address = find_address_from_GPS(GPS=GPS_info)
+    print("Time taken: ")
+    print(GPS_info['date_information'] + "\n")
 
-print("Time taken: ")
-print(GPS_info['date_information'] + "\n")
+    print("Longitude and Latitude :")
+    print(GPS_info['GPS_information']['GPSLongitude'], GPS_info['GPS_information']['GPSLongitudeRef'])
+    print(GPS_info['GPS_information']['GPSLatitude'], GPS_info['GPS_information']['GPSLatitudeRef'] + "\n")
 
-print("Longitude and Latitude :")
-print(GPS_info['GPS_information']['GPSLongitude'], GPS_info['GPS_information']['GPSLongitudeRef'])
-print(GPS_info['GPS_information']['GPSLatitude'], GPS_info['GPS_information']['GPSLatitudeRef'] + "\n")
-
-
-print("Address: ")
-print(address)
+    print("Address: ")
+    print(address)
