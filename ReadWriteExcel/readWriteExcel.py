@@ -62,6 +62,10 @@ def write_excel(file_name, data):
         worksheet.write(0, i+1, head[i], style_more) 
     '''
     worksheet.write_row('B1', head, style_more)  # 写入表头
+    
+    # 冻结第一行和第一列
+    worksheet.freeze_panes(1, 1)
+    
     for i in range(row):
         for j in range(col):
             worksheet.write(i+1, j+1, data[i][j], style)
