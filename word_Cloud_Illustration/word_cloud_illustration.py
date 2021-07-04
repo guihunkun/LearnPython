@@ -36,7 +36,7 @@ def generate_word_cloud_illustration(content, figure_name, result_name):
 
 
 def statistics_words(content, number, word_statis_name):
-    not_statis = [':', '：', '?', '他', '她', '？', '，', '、', '。', '的', '和', '\u3000', '“', '”', ' ', 'ri', '与', '是', '在', '中', '了', '\n']
+    not_statis = ['也', '我', '着', '那', '这', '了', '你', ':', '：', '?', '！', '...', '…', '他', '她', '？', '，', '、', '。', '的', '和', '\u3000', '“', '”', ' ', 'ri', '与', '是', '在', '中', '了', '\n']
     words = list(jieba.lcut(content))
     statistics = Counter(words).most_common(number)
     dic = {key: value for (key, value) in statistics}
@@ -66,6 +66,6 @@ if __name__ == '__main__':
     result_name = 'result.png'  # 保存的词云图文件名
     word_statis_name = "word_statistics"  # 词频统计绘制的雷达图文件名
     content = read_file(file_name)        # 读取文件
-    statistics_words(content, 20, word_statis_name)  # 词频统计并绘制雷达图
+    statistics_words(content, 35, word_statis_name)  # 词频统计并绘制雷达图
     generate_word_cloud_illustration(content, figure_name, result_name)  # 生成词云图
 
