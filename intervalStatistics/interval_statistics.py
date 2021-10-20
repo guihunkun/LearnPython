@@ -20,7 +20,7 @@ if __name__ == '__main__' :
     start = -10  # 区间左端点
     number_of_interval = 10  # 区间个数
     length = 2  # 区间长度
-    intervals = {'{}~{}'.format(length*x+start, 2*(x+1)+start): 0 for x in range(number_of_interval)}  # 生成区间
+    intervals = {'{:.3f}~{:.3f}'.format(length*x+start, length*(x+1)+start): 0 for x in range(number_of_interval)}  # 生成区间
     # print(intervals)
     data = np.random.randint(start, start+length*number_of_interval+1, size=1000)  # 待统计数据(1000随机数)
     # print(data)
