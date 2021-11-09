@@ -67,11 +67,11 @@ def plotMesh(Nodes, Triangles, Tags, showNodeId = True, showTriangleId = True, s
         center_y = sum([_[1] for _ in polygon]) / len(polygon)
         if showTriangleId :
             ax.annotate(triangleId, (center_x, center_y), color='red', weight='bold', fontsize=7, ha='center', va='center')
-        if showNodeId :
-            nodeId = 0
-            for node in Nodes:
-                nodeId = nodeId + 1
-                ax.annotate(nodeId, (node[0], node[1]), color='black', weight='bold', fontsize=9, ha='center', va='center')
+    if showNodeId :
+         nodeId = 0
+         for node in Nodes:
+             nodeId = nodeId + 1
+             ax.annotate(nodeId, (node[0], node[1]), color='black', weight='bold', fontsize=9, ha='center', va='center')
     collection = PatchCollection(patches)
     if showTriangleTag :
         collection.set_array(np.array(colors))
